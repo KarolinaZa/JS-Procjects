@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider</title>
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="wraper">   
+		<div class="arrow-left"><i class="fas fa-arrow-left"></i></div>
+		<div class="arrow-right"><i class="fas fa-arrow-right"></i></div>
+	</div>
+	
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	.wraper {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		background-image: url(image1.jpeg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0px -240px;
+	}
+	
+	i {
+		font-size: 40px;
+		color: black;
+		
+	}
+	.arrow-left, .arrow-right {
+		width: 70px;
+		height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(169, 169, 169, 0.33);
+		transition-duration: 0.2s;
+		transition-timing-function: linear;
+	}
+
+	.mouse {
+		width: 100px;
+		height: 100vh;
+		background-color: rgba(169, 169, 169, 0.6);
+		transition-duration: 0.2s;
+		transition-timing-function: linear;
+	}
+	
+	
+</style>
+<script>
+	
+let active = 0	
+const array = ['image1.jpeg', 'image2.jpeg', 'image3.jpeg']
+const arrowLeft = document.querySelector('.arrow-left');
+const arrowRight = document.querySelector('.arrow-right');
+const image = document.querySelector('.wraper');
+	
+
+arrowLeft.addEventListener('mouseover', function(){
+	arrowLeft.classList.add('mouse');
+});
+	
+arrowLeft.addEventListener('mouseout', function(){
+	arrowLeft.classList.remove('mouse');
+});
+	
+arrowRight.addEventListener('mouseover', function(){
+	arrowRight.classList.add('mouse');
+});
+	
+arrowRight.addEventListener('mouseout', function(){
+	arrowRight.classList.remove('mouse');
+});
+
+	
+arrowLeft.addEventListener('click', function(){
+	active--
+	if (active < 0) active = array.length - 1
+	image.style.backgroundImage = `url(${array[active]})`
+});
+	
+arrowRight.addEventListener('click', function(){
+	active++
+	if (active > 2) active = array.length - 3
+	image.style.backgroundImage = `url(${array[active]})`
+});
+	
+</script>
+</body>
+</html>
