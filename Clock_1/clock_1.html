@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+</head>
+<body>
+
+<div class="wraper">
+	<div class="clock">
+		<div class="clock-face">
+			<div class="hand sec-hand red"></div>
+			<div class="hand min-hand green"></div>
+			<div class="hand hour-hand blue"></div>
+		</div>
+	</div>
+</div>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	  }	
+	
+	.wraper {
+		height: 100vh;
+		width: 100wh;
+		background-image: url(pexels-photo-496117.jpeg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+	  }
+	
+	.clock {
+		width: 300px;
+		height: 300px;
+		border: 12px solid #0056A1;
+		border-radius: 50%;
+		box-shadow: 0 0 0 9px rgba(81, 90, 127, 0.54);
+		padding: 20px;
+		margin-top: 110px;
+/*		background-image: url(Tarcze-zegarowe-3.jpg);*/
+		background-size: cover;
+	}
+	
+	.clock-face {
+		position: relative;
+		width: 100%;
+      	height: 100%;
+		transform: translateY(-4px);
+	}
+	
+	.hand {
+		width: 50%;
+		height: 3px;
+		background: rgb(0, 0, 0);
+		position: absolute;
+		top: 50%;
+		transform-origin: 100%;   /*element obraca sie nie w okól wlasnej osi 'default-owo' 50% a wg prawej krawedzi*/
+		transform: rotate(90deg); /*ustawia wskazówke na 12*/
+		transition: 0.05;
+		transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+	}
+	
+	.hand.sec-hand.red {
+		background: rgb(35, 198, 237);
+		height: 3.5px;
+	}
+	
+	.hand.min-hand.green {
+		background: rgb(32, 42, 32);
+		height: 4.5px;
+	}
+	
+	.hand.hour-hand.blue {
+		background: #1044f2;
+		height: 5.5px;
+	}
+	
+	
+</style>
+
+<script>
+	 const secHand = document.querySelector('.sec-hand');
+	 const minHand = document.querySelector('.min-hand');
+	 const hourHand = document.querySelector('.hour-hand');
+	
+	 function setDate(){
+		 const time = new Date();
+		 
+		 const seconds = time.getSeconds();
+		 const secondsDeg = ((seconds / 60) * 360) + 90;
+		 secHand.style.transform = `rotate(${secondsDeg}deg)`;
+		 
+		 const minutes = time.getMinutes();
+		 const minutesDeg = ((minutes / 60) * 360) + ((minutes/60)*6) + 90;
+		 minHand.style.transform = `rotate(${minutesDeg}deg)`;
+		 
+		 const hours = time.getHours();
+		 const hoursDeg = ((hours / 12) * 360) + ((hours/60)*30) + 90;
+		 hourHand.style.transform = `rotate(${hoursDeg}deg)`;
+	 }
+	
+	 setInterval(setDate, 1000);
+
+  	 setDate();
+	
+</script>	
+</body>
+</html>
