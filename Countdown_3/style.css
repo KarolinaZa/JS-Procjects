@@ -1,0 +1,76 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #282e3a;
+	font-family: 'Lora', serif;
+}
+h1 {
+	color: beige;
+	text-align: center;
+	font-size: 50px;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	margin-top: 80px;
+}
+p {
+	color: beige;
+	text-align: center;
+	font-size: 25px;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	margin-top: 80px;
+}
+.wraper {
+	width: 800px;
+	margin: 60px auto;
+	
+}
+.clock {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 80px;
+}
+.clock-text {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.clock span {
+	text-align: center;
+	font-size: 83px;
+	border-radius: 20px;
+	width: 20%;
+}
+.clock span:nth-child(1) {
+	background: #fa5559;
+}
+.clock span:nth-child(2) {
+	background: #26c2b9;
+}
+.clock span:nth-child(3) {
+	background: #f6bc58;
+}
+.clock span:nth-child(4) {
+	background: #2dcb74;
+}
+.clock-text span {
+	text-align: center;
+	font-size: 20px;
+	width: 20%;
+	color: beige;
+	text-transform: uppercase;
+}
+span.turn{
+	animation: turn 0.7s ease forwards;
+}
+
+@keyframes turn{
+	0%{transform: rotateX(0deg)}
+	100%{transform: rotateX(360deg)}
+}
+
