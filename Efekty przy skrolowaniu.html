@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Efekty przy skrolowaniu</title>
+
+<style>
+* {
+margin: 0;
+}
+	 
+section {
+height: 100vh;
+display: flex;
+}
+	 
+section:nth-child(1) {
+background-color: darkred;
+}
+	 
+section:nth-child(2) {
+background-color: darkgoldenrod;
+}
+
+section:nth-child(3) {
+background-color: darkgreen;
+}
+	 
+h1 {
+color: white;
+font-family: arial;
+font-size: 50px;
+margin: auto;
+transition: 1s;
+}
+	 
+section:nth-child(2).hide h1 {
+transform: translateX(-2000px)
+}
+
+section:nth-child(3).hide h1 {
+transform: scale(0);
+opacity: 0;
+}
+</style>
+</head>
+
+<body>
+	<section>
+		<h1>jeden</h1>
+	</section>
+	<section class="hide s2">
+		<h1>dwa</h1>
+	</section>
+	<section class="hide s3">
+		<h1>trzy</h1>
+	</section>
+	<script>
+//		setTimeout(function() {
+//			document.querySelector('.s2').classList.remove('hide')
+//		}, 1000);
+	window.scrollY //aktualna wielkosc scrolla
+	window.innerHeight // wysokosc okna przegladarki
+//		element.offsetHeight // wysokosc elementu
+//		element.offsetTop // jak daleko od poczatku dok znajduje sie nasz element
+	const s2 = document.querySelector('.s2')
+	const s3 = document.querySelector('.s3')
+
+	const showH1 = function() {
+			if (window.scrollY > s2.offsetTop + s2.offsetHeight * 1.5 - window.innerHeight) {
+				s2.classList.add('hide');
+			} else if (window.scrollY > s2.offsetTop + s2.offsetHeight / 2 - window.innerHeight) {
+				s2.classList.remove('hide');
+
+			} else if (window.scrollY < 100) {
+				s2.classList.add('hide');
+			};
+			if (window.scrollY > s3.offsetTop + s3.offsetHeight / 2 - window.innerHeight) {
+				console.log('mam 3');
+				s3.classList.remove('hide');
+			} else if (window.scrollY < 100) {
+
+				s3.classList.add('hide');
+			};
+
+		}
+
+		window.addEventListener('scroll', showH1)
+	</script>
+
+</body>
+</html>
