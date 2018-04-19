@@ -1,0 +1,39 @@
+/* Buttons */
+.btn {
+	display: inline-block;
+	background: #3e6edf;
+	color: #fff;
+	padding: 12px 18px;
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all 150ms ease;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.btn i { margin-left: 6px; }
+
+/* Button sizes */
+.btn-sm {
+	font-size: 14px;
+	padding: 8px 12px;
+}
+
+.btn-lg {
+	font-size: 22px;
+	padding: 16px 28px;
+}
+
+/* Button colors */
+.btn-gray {
+	background: #808080;
+	color: #fff;
+}
+
+.btn-yellow {
+	background: #ffe522;
+	color: #333;
+}

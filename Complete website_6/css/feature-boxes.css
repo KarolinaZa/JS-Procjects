@@ -1,0 +1,66 @@
+/* Feature boxes */
+.feature-boxes {
+	margin-bottom: 40px;
+}
+
+.feature-boxes > .container {
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* Single feature box */
+.feature-box {
+	margin-bottom: 60px;
+	text-align: center;
+	flex-basis: 31%;
+}
+
+.feature-box a { display: block; }
+
+.feature-box a:hover { opacity: 1; }
+
+.feature-box a:hover i {
+	background: #3e6edf;
+	color: #fff;
+	font-size: 76px;
+}
+
+.feature-box i {
+	transition: all 0.2s ease;
+	font-size: 60px;
+	line-height: 120px;
+	color: #333;
+	background: #ffe522;
+	display: block;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin: 0 auto 25px;
+}
+
+.feature-box h3 {
+	margin: 0 0 10px;
+	font-size: 24px;
+}
+
+.feature-box p {
+	margin: 0;
+	color: #808080;
+}
+
+/* RWD */
+@media (max-width: 800px) {
+	.feature-boxes {
+		margin-bottom: 0;	
+	}
+	
+	.feature-box {
+		flex-basis: 47%;
+	}
+}
+
+@media (max-width: 540px) {
+	.feature-box {
+		flex-basis: 100%;
+	}
+}

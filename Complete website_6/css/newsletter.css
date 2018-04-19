@@ -1,0 +1,80 @@
+/* Newsletter */
+.newsletter {
+	background: #3e6edf;
+	padding: 35px 0;
+	margin-bottom: 20px;
+}
+
+.newsletter > .container {
+	justify-content: space-between;
+}
+
+/* Newsletter text */
+.newsletter-text {
+	flex-basis: 66%;
+}
+
+.newsletter-text h3,
+.newsletter-text p {
+	color: #fff;
+}
+
+.newsletter-text h3 {
+	margin: 0 0 15px;
+	font-weight: 300;
+}
+
+.newsletter-text p { margin: 0; }
+
+/* Newsletter CTA */
+.newsletter-cta {
+	display: flex;
+	flex-basis: 30%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Modal */
+.remodal {
+	max-width: 480px;
+}
+
+.remodal form {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.remodal h3,
+.remodal p {
+	margin: 0 0 20px;
+}
+
+.remodal input,
+.remodal button {
+	width: 100%;
+}
+
+.remodal input {
+	margin-bottom: 10px;
+}
+
+.remodal button {
+	text-transform: uppercase;
+}
+
+/* RWD */
+@media (max-width: 620px) {
+	.newsletter > .container {
+		flex-direction: column;
+		text-align: center;
+	}
+	
+	.newsletter-text,
+	.newsletter-cta {
+		flex-basis: 100%;
+	}
+	
+	.newsletter-text {
+		margin-bottom: 30px;
+	}
+}

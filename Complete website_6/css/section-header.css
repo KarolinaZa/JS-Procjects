@@ -1,0 +1,31 @@
+/* Section header */
+.section-header {
+	text-align: center;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 70px 20px;
+}
+
+.section-header h2 {
+	margin: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.section-header h2:after {
+	content: '';
+	display: block;
+	width: 120px;
+	height: 3px;
+	background: #3e6edf;
+	margin: 30px auto 27px;
+}
+
+.section-header p { margin: 0; }
+
+@media (max-width: 800px) {
+	.section-header {
+		padding-top: 35px;
+		padding-bottom: 55px;
+	}
+}
